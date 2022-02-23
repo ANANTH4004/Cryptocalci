@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> CRYPTO CALCULATOR </title>
+    <link rel="stylesheet" href="crypto.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Document</title> -->
+</head>
+<body>
+    <h1 >   CRYPTOCURRENCY PROFIT CALCULATOR</h1>
+    <div class="container">
+        <h1><large>CRYPTOCURRENCY</large> </h1>
+        <label>Coin Symbol:</label>
+        <input type="text" class="input1" placeholder="Enter Coin Symbol"> <br>
+        <label>Price per Coin:</label>
+        <input type="text" class="input2" placeholder="Price" id="in2">
+        <label>Price per Coin:</label>
+        <input type="text" class="input3" placeholder="Total Amount Invested" id="in3"> <br>
+        <input type="submit" value="Submit" class="clk" size="10px">
+        <!-- <P><span id='curr'></span>current price : </P> -->
+   
+    
+</div>
+<div class="showData">
+    <h1><large>PROFIT</large> </h1>
+    <p id = "sam"> HERE IS YOUR PROFIT! </p>
+</div>
+<div class="ref">
+    <p> Refresh before every Calculation</p>
+</div>
+    <script>
+        const input1 = document.querySelector('.input1');
+        const input2 = document.getElementById('in2');
+        const input3 = document.querySelector('in3');
+        var button = document.querySelector('.clk');
+        const showData = document.querySelector('.showData');
+        button.addEventListener('click', () => {
+const Input = input1.value;
+fetch(`https://min-api.cryptocompare.com/data/price?fsym=${Input}&tsyms=USD,JPY,INR&api_key={f9a810ab4a280c42673646bced25e912a1d329323b4058d9d17e6d5e2ef83075}`)
+  .then(response => response.json())
+   .then(data => {
+       console.log(data.INR)
+    var Profit_per_coin = data.INR - in2.value;
+    var profit = (in3.value/in2.value)*(Profit_per_coin);
+       input1.value = " ";
+   in2.value = " ";
+   in3.value = " ";
+
+sam.innerHTML = `
+                <CENTER>
+                <font size = "4.5">
+                    Coin Price   =   ${data.INR}
+                       <br>
+                       <br>
+                    Total Profit = ${profit}
+                </font>
+                    <CENTER>
+                    `; 
+    });
+})
+    </script>
+</body>
+</html>

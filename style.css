@@ -1,0 +1,60 @@
+h1{
+  color : rgb(21, 18, 70);
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+    Body {
+      font-family: 'Arial';
+    }
+ 
+   input[type=text] { 
+          width: 100%; 
+          margin: 8px 0;
+          padding: 12px 20px; 
+          border: none; 
+          border-radius: 3px;
+           box-sizing: border-box;  
+      }
+      label{  
+        color: #0d022b;  
+        font-size: 20px;  
+    }  
+  
+     
+   .container { 
+    width: 410px;  
+    overflow: hidden;  
+    position: absolute;
+    top: 20%;
+    left: auto;
+     margin: 20 0 0 450px;   
+    padding: 60px;  
+    margin-left: 80px;
+    background: #d4c594;  
+    border-radius: 15px ; 
+    float:left;
+      }
+      .showData {
+        text-align: center;
+        width: 350px;  
+    overflow: hidden;
+    padding: 60px; 
+    position: absolute;
+    top: 40%;
+    left: 60%; 
+    margin: -25px 0 0 -25px;
+    background: #d4c594;  
+    border-radius: 15px ; 
+      }
+      .sam{
+        text-align:right;
+        text-decoration: #08ffd1;
+        padding: 20em;
+      }
+      .ref{
+        position: absolute;
+        top: 80%;
+        left: 67%; 
+      }
+      
+      
